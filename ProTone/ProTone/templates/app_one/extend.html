@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+	<head>
+		<title>Pro-Tone</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		{% comment %} <link rel="stylesheet" href="{% static 'assets/css/stylecss.css' %}" /> {% endcomment %}
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header">
+
+					<!-- Logo -->
+						<h1><a href="index.html" id="logo">Pro-Tone <em>Your way to the future</em></a></h1>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="{% url 'app_one:home' %}">Home</a></li>
+								<li>
+									<a href="#">Dropdown</a>
+									<ul>
+										<li><a href="#">1</a></li>
+										<li><a href="#">2</a></li>
+										<li><a href="#">3</a></li>
+										<li>
+											<a href="#">Submenu</a>
+											<ul>
+												<li><a href="#">1</a></li>
+												<li><a href="#">2</a></li>
+												<li><a href="#">3</a></li>
+												<li><a href="#">4</a></li>
+												<li><a href="#">5</a></li>
+											</ul>
+										</li>
+										<li><a href="#">اخير</a></li>
+									</ul>
+								</li>
+								{% if user.is_authenticated %}
+								<li><a href="{% url 'app_one:test' %}">Pro-Tone Analyze</a></li>
+								{% else %}
+								<li><a>Pro-Tone Analyze login required</a></li>
+								{% endif %}
+								<li><a href="{% url 'app_one:team' %}">About the team</a></li>
+								{% if user.is_authenticated %}
+								<li><a href="{% url 'app_one:logout' %}">Logout</a></li>
+								{% else %}
+								<li><a href="{% url 'app_one:login' %}">Login</a></li>
+								<li><a href="{% url 'app_one:signup' %}">Signup</a></li>
+								{% endif %}
+								
+							</ul>
+						</nav>
+
+				</div>
+
+                {% block body_block %}
+                <!-- this take it to toher html -->
+                {% endblock %}
+
+
+
+
+
+
+
+			<!-- Footer -->
+				<div id="footer">
+					<div class="container">
+						<div class="row">
+							<section class="col-3 col-6-narrower col-12-mobilep">
+								<h3>روابط لبعض الأشياء</h3>
+								<ul class="links">
+									<li><a href="#">تعليم</a></li>
+									<li><a href="#">عمل</a></li>
+									<li><a href="#">مابين عمل وتعلمين</a></li>
+									<li><a href="#">الخخخخ</a></li>
+									<li><a href="#">الخخ 2.</a></li>
+								</ul>
+							</section>
+							<section class="col-3 col-6-narrower col-12-mobilep">
+								<h3>روابط</h3>
+								<ul class="links">
+									<li><a href="#">وزاره تربيه والتعليم</a></li>
+									<li><a href="#">شركة</a></li>
+									<li><a href="#">مصادر تعليميه</a></li>
+									<li><a href="#">الهخخخ</a></li>
+								</ul>
+							</section>
+							<section class="col-6 col-12-narrower">
+								<h3>للتواصل</h3>
+								<form>
+									<div class="row gtr-50">
+										<div class="col-6 col-12-mobilep">
+											<input type="text" name="name" id="name" placeholder="الاسم" />
+										</div>
+										<div class="col-6 col-12-mobilep">
+											<input type="email" name="email" id="email" placeholder="اميل" />
+										</div>
+										<div class="col-12">
+											<textarea name="message" id="message" placeholder="الرساله" rows="5"></textarea>
+										</div>
+										<div class="col-12">
+											<ul class="actions">
+												<li><input type="submit" class="button alt" value="إرسال الرساله" /></li>
+											</ul>
+										</div>
+									</div>
+								</form>
+							</section>
+						</div>
+					</div>
+
+					<!-- Icons -->
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							<li><a href="#" class="icon brands fa-google-plus-g"><span class="label">Google+</span></a></li>
+						</ul>
+
+					<!-- Copyright -->
+						<div class="copyright">
+							<ul class="menu">
+								<li>&copy; All rights reserved</li><li>Design: Basher</a></li>
+							</ul>
+						</div>
+
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
+			<script src="{% static 'assets/js/jquery.countup.min.js' %}"></script>
+			<script src="{% static 'assets/js/browser.min.js' %}"></script>
+			<script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/mainjs.js' %}"></script>
+			{% comment %} <script src="{% static 'assets/js/mainjs.js' %}"></script> {% endcomment %}
+
+	</body>
+</html>
